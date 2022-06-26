@@ -1,4 +1,4 @@
-import mongoose, { Schema, Types } from 'mongoose';
+import mongoose, { Model, Schema, Types } from 'mongoose';
 import validator from 'validator';
 import addressSchema, { IAddress } from '../schemas/addressSchema';
 
@@ -13,9 +13,9 @@ export interface IUser {
   role: 'admin' | 'user';
   paymentMethods: 'cash' | 'card';
   phone: string[];
-  passwordChangedAt: mongoose.Date;
-  passwordResetToken: String;
-  passwordResetExpires: mongoose.Date;
+  // passwordChangedAt: mongoose.Date;
+  // passwordResetToken: String;
+  // passwordResetExpires: mongoose.Date;
   active: boolean;
 }
 
@@ -64,12 +64,15 @@ const userSchema = new mongoose.Schema<IUser>({
       message: 'Please provide the same password',
     },
   },
-  address: [
-    {
-      type: addressSchema,
-      required: true,
-    },
-  ],
+  address: {
+    type: [
+      {
+        type: addressSchema,
+        required: true,
+      },
+    ],
+    validate: [(el: []) => el.length <= 3, '{PATH} exceeds the limit of 3'],
+  },
   cart: [
     {
       type: Schema.Types.ObjectId,
@@ -99,9 +102,9 @@ const userSchema = new mongoose.Schema<IUser>({
       required: true,
     },
   ],
-  passwordChangedAt: Date,
-  passwordResetToken: String,
-  passwordResetExpires: Date,
+  // passwordChangedAt: Date,
+  // passwordResetToken: String,
+  // passwordResetExpires: Date,
   active: {
     type: Boolean,
     default: true,
@@ -111,7 +114,7 @@ const userSchema = new mongoose.Schema<IUser>({
 
 // Middleware before QUERY
 userSchema.pre(/^find/, function (next) {
-  this.$model(this.modelName).find({ active: { $ne: false } });
+  UserModel.find({ active: { $ne: false } });
   return next();
 });
 

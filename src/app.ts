@@ -5,6 +5,7 @@ import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import globalErrorHandler from './controllers/errorController';
+import indexRouter from './routes';
 import AppError from './utils/AppError';
 
 const app = express();
@@ -38,7 +39,7 @@ app.use(mongoSanitize());
 app.use(cors());
 
 // todo 2) ROUTES
-// ..........
+app.use('/api/v1', indexRouter);
 
 // global route
 app.all('*', (req, res, next) => {

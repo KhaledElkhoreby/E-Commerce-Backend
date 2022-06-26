@@ -45,7 +45,7 @@ export const createModel = (Model: Model<any>): RequestHandler =>
 
 export const getOne = (
   Model: Model<any>,
-  populateOptions: string | string[]
+  populateOptions?: string | string[]
 ): RequestHandler =>
   catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const { id } = req.params;
