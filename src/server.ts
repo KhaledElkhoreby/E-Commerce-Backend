@@ -3,39 +3,37 @@ import dotenv from 'dotenv';
 import { Server } from 'http';
 
 process.on('uncaughtException', (err) => {
-    console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
-    console.log(err.name, err.message);
-    process.exit(1);
+  console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+  console.log(err.name, err.message);
+  process.exit(1);
 });
 
 dotenv.config();
 import app from './app';
 
 const DB = process.env.DATABASE?.replace(
-    '<password>',
-    process.env.DATABASE_PASSWORD!
+  '<password>',
+  process.env.DATABASE_PASSWORD!
 )!;
-console.log('BD', DB);
-console.log('Port', process.env.PORT);
 
 let server: Server;
 (async () => {
-    await mongoose.connect(DB);
+  await mongoose.connect(DB);
 
-    console.log('Succesful DB Connection');
-    const port = process.env.PORT || 3000;
-    server = app.listen(port, () => {
-        console.log(`App running on port ${port}...`);
-    });
+  console.log('Succesful DB Connection');
+  const port = process.env.PORT || 3000;
+  server = app.listen(port, () => {
+    console.log(`App running on port ${port}...`);
+  });
 })().catch((err: Error) => {
-    console.error(err);
-    console.log('Unsccesful DB Connection');
+  console.error(err);
+  console.log('Unsccesful DB Connection');
 });
 
 process.on('unhandledRejection', (err: Error) => {
-    console.log('UNHANDLED REJECTION!💥 Shutting down...');
-    console.log(err.name, err.message);
-    server.close(() => process.exit(1));
+  console.log('UNHANDLED REJECTION!💥 Shutting down...');
+  console.log(err.name, err.message);
+  server.close(() => process.exit(1));
 });
 
 // console.log(x) //! uncaughtException

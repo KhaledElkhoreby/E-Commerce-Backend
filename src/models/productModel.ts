@@ -1,64 +1,70 @@
 import mongoose from 'mongoose';
 import variantSchema, { IVariant } from '../schemas/variantSchema';
+import validator from 'validator';
 
 export interface IProduct {
-    category: string;
-    brand: string;
-    brand_thumbnail: string;
-    title: string;
-    description: string;
-    countReview: number;
-    productRating: number;
-    variants: IVariant[];
-    availble: boolean;
+  category: string;
+  brand: string;
+  brand_thumbnail: string;
+  title: string;
+  description: string;
+  ratingsAverage: number;
+  ratingsQuantity: number;
+  productRating: number;
+  variants: IVariant[];
 }
 
 export const productShecma = new mongoose.Schema<IProduct>(
-    {
-        category: {
-            type: String,
-            required: true,
-            enum: ['Shirts', 'Pants', 'T-shirts', 'Sportswear'],
-        },
-        brand: {
-            type: String,
-            required: true,
-        },
-        brand_thumbnail: {
-            type: String,
-            required: true,
-        },
-        title: {
-            type: String,
-            required: true,
-        },
-        description: {
-            type: String,
-            required: true,
-        },
-        countReview: {
-            type: Number,
-            required: true,
-        },
-        productRating: {
-            type: Number,
-            required: true,
-        },
-        variants: [
-            {
-                type: variantSchema,
-            },
-        ],
-        availble: {
-            type: Boolean,
-            default: true,
-        },
+  {
+    category: {
+      type: String,
+      required: true,
+      enum: ['Shirts', 'Pants', 'T-shirts', 'Sportswear'],
     },
-    {
-        timestamps: {
-            createdAt: 'createdAt',
-        },
-    }
+    brand: {
+      type: String,
+      required: true,
+      validate: [validator.isAlpha, 'Invalid brand name'],
+    },
+    brand_thumbnail: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+      validate: [validator.isAlpha, 'Invalid title'],
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    ratingsAverage: {
+      type: Number,
+      default: 4.5,
+      min: [1, 'Rating must be above 1.0'],
+      max: [5, 'Rating must be below 5.0'],
+      set: (value: number) => Math.round(value * 10) / 10,
+    },
+    ratingsQuantity: { type: Number, default: 0 },
+    productRating: {
+      type: Number,
+      required: true,
+      min: [0, 'Product rate must be greater than zero'],
+      max: [5, 'Product rate must be less than 5'],
+      default: 4.5,
+    },
+    variants: [
+      {
+        type: variantSchema,
+      },
+    ],
+  },
+  {
+    timestamps: {
+      createdAt: 'createdAt',
+    },
+  }
 );
 
 const ProductModel = mongoose.model<IProduct>('product', productShecma);
