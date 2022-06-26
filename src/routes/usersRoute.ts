@@ -5,7 +5,7 @@ import {
   getAllUser,
   getUser,
   updateUser,
-} from '../controllers/productControllers';
+} from '../controllers/userControllers';
 const usersRouter = express.Router();
 
 usersRouter.route('/').get(getAllUser).post(addUser);
