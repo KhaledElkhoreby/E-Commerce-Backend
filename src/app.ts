@@ -1,11 +1,11 @@
-import express, { NextFunction } from 'express';
-import morgan from 'morgan';
+import cors from 'cors';
+import express from 'express';
+import mongoSanitize from 'express-mongo-sanitize';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
-import mongoSanitize from 'express-mongo-sanitize';
-import cors from 'cors';
-import AppError from './utils/AppError';
+import morgan from 'morgan';
 import globalErrorHandler from './controllers/errorController';
+import AppError from './utils/AppError';
 
 const app = express();
 
