@@ -6,7 +6,8 @@
   "scripts": {
     "tsc": "tsc -w",
     "start": "nodemon dist/server.js",
-    "start:prod": "cross-env NODE_ENV=production nodemon dist/server.js"
+    "start:prod": "cross-env NODE_ENV=production nodemon dist/server.js",
+    "prettier": "npx prettier --write ."
   },
   "author": "",
   "license": "ISC",
@@ -23,8 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.0",
     "nodemon": "^2.0.18",
-    "validator": "^13.7.0",
-    "xss-clean": "^0.1.1"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -35,8 +35,10 @@
     "@types/morgan": "^1.9.3",
     "@types/node": "^18.0.0",
     "@types/supertest": "^2.0.12",
+    "@types/validator": "^13.7.3",
     "jasmine": "^4.2.1",
     "jasmine-spec-reporter": "^7.0.0",
+    "mongoose-dummy": "^1.0.8",
     "morgan": "^1.10.0",
     "supertest": "^6.2.3",
     "tsc": "^2.0.4",

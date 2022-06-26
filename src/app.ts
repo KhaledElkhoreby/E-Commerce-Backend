@@ -11,20 +11,20 @@ const app = express();
 
 // todo 1) GLOBAL MIDDLEWARES
 app.use(helmet()); // Set security HTTP headers
-
+app.use(helmet.xssFilter()); // XSS-Protection
 // Development logging
 if (process.env.NODE_ENV === 'development') {
-    console.log('Start Development');
-    app.use(morgan('dev'));
+  console.log('Start Development');
+  app.use(morgan('dev'));
 } else {
-    console.log('Strat Production');
+  console.log('Strat Production');
 }
 
 // Limit requests from same API
 const limiter = rateLimit({
-    max: 100,
-    windowMs: 60 * 60 * 1000,
-    message: 'Too many requests from this IP, please try again in an hour!',
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: 'Too many requests from this IP, please try again in an hour!',
 });
 app.use('/api', limiter);
 
@@ -42,7 +42,7 @@ app.use(cors());
 
 // global route
 app.all('*', (req, res, next) => {
-    next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
+  next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
 });
 
 // todo 3) GLOBAL ERROR HANDLER MIDDLEWARE
