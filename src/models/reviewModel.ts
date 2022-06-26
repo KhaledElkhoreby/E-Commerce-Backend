@@ -14,7 +14,7 @@ interface ReviewModel extends Model<IReview> {
 
 interface IStats {
   ratingsQuantity: number;
-  productRating: number;
+  ratingsAverage: number;
 }
 
 const reviewSchema = new mongoose.Schema<IReview, ReviewModel>({
@@ -49,7 +49,7 @@ reviewSchema.static('calcAverageRatings', async function (productId: any) {
       $group: {
         _id: '$product',
         ratingsQuantity: { $sum: 1 },
-        productRating: {
+        ratingsAverage: {
           $avg: '$rating',
         },
       },
@@ -59,28 +59,24 @@ reviewSchema.static('calcAverageRatings', async function (productId: any) {
   if (stats.length > 0) {
     await ProductModel.findByIdAndUpdate(productId, {
       ratingsQuantity: stats[0].ratingsQuantity,
-      productRating: stats[0].productRating,
+      ratingsAverage: stats[0].ratingsAverage,
     });
   } else {
     await ProductModel.findByIdAndUpdate(productId, {
       ratingsQuantity: 0,
-      productRating: 4.5,
+      ratingsAverage: 4.5,
     });
   }
 });
 
 reviewSchema.post('save', async function () {
-  await (this.$model(this.modelName) as ReviewModel).calcAverageRatings(
-    this.product
-  );
+  await ReviewModel.calcAverageRatings(this.product);
 });
 
 // findByIdAndUpdate
 // findByIdAndDelete
 reviewSchema.post(/^findOneAnd/, async function () {
-  await (this.$model(this.modelName) as ReviewModel).calcAverageRatings(
-    this.product
-  );
+  await ReviewModel.calcAverageRatings(this.product);
 });
 
 const ReviewModel = mongoose.model<IReview, ReviewModel>(

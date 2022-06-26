@@ -22,8 +22,9 @@ let server: Server;
 
   console.log('Succesful DB Connection');
   const port = process.env.PORT || 3000;
+  const host = process.env.HOST;
   server = app.listen(port, () => {
-    console.log(`App running on port ${port}...`);
+    console.log(`App running on port ${host}${port} ...`);
   });
 })().catch((err: Error) => {
   console.error(err);
