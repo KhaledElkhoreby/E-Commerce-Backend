@@ -1,1 +1,1 @@
-HI
+Hello world from typeScript
