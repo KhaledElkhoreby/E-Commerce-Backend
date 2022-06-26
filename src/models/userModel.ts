@@ -1,6 +1,6 @@
 import mongoose, { Schema, Types } from 'mongoose';
-import addressSchema, { IAddress } from '../schemas/addressSchema';
 import validator from 'validator';
+import addressSchema, { IAddress } from '../schemas/addressSchema';
 
 export interface IUser {
   name: string;

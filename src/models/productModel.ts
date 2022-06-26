@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import variantSchema, { IVariant } from '../schemas/variantSchema';
 import validator from 'validator';
+import variantSchema, { IVariant } from '../schemas/variantSchema';
 
 export interface IProduct {
   category: string;
@@ -10,7 +10,6 @@ export interface IProduct {
   description: string;
   ratingsAverage: number;
   ratingsQuantity: number;
-  productRating: number;
   variants: IVariant[];
 }
 
@@ -47,13 +46,6 @@ export const productShecma = new mongoose.Schema<IProduct>(
       set: (value: number) => Math.round(value * 10) / 10,
     },
     ratingsQuantity: { type: Number, default: 0 },
-    productRating: {
-      type: Number,
-      required: true,
-      min: [0, 'Product rate must be greater than zero'],
-      max: [5, 'Product rate must be less than 5'],
-      default: 4.5,
-    },
     variants: [
       {
         type: variantSchema,
