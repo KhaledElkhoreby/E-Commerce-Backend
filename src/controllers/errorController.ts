@@ -28,6 +28,7 @@ const handleDuplicateFieldsDB = (err: any) => {
 };
 
 const sendErrorDev = (err: AppError, res: Response) => {
+  console.log(err);
   res.status(err.statusCode).json({
     status: err.status,
     message: err.message,
