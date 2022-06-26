@@ -1,4 +1,4 @@
-import { ErrorRequestHandler, Response } from 'express';
+import { ErrorRequestHandler, NextFunction, Response,Request } from 'express';
 import { CastError, Error } from 'mongoose';
 import AppError from '../utils/AppError';
 
@@ -27,8 +27,8 @@ const handleDuplicateFieldsDB = (err: any) => {
   return new AppError(message, 400);
 };
 
-const sendErrorDev = (err: AppError, res: Response) => {
-  console.log(err);
+const sendErrorDev = (err: AppError, req: Request, res: Response, next: NextFunction) => {
+  console.log("*************************asd", err);
   res.status(err.statusCode).json({
     status: err.status,
     message: err.message,
@@ -56,10 +56,10 @@ const sendErrorProd = (err: AppError, res: Response) => {
   }
 };
 
-const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
+const globalErrorHandler: ErrorRequestHandler = (err, req:Request, res:Response, next:NextFunction) => {
   console.log(err.stack);
   if (process.env.NODE_ENV === 'development') {
-    sendErrorDev(err, res);
+    sendErrorDev(err, req, res, next);
   } else if (process.env.NODE_ENV === 'production') {
     if (err.name === 'CastError') err = handleCastErrorDB(err);
     if (err.code === 11000) err = handleDuplicateFieldsDB(err);
