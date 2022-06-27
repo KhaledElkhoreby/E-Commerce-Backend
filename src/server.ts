@@ -24,7 +24,7 @@ let server: Server;
   const port = process.env.PORT || 3000;
   const host = process.env.HOST;
   server = app.listen(port, () => {
-    console.log(`App running on port ${host}:${port} ...`);
+    console.log(`App running on port ${host}${port} ...`);
   });
 })().catch((err: Error) => {
   console.error(err);
