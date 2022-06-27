@@ -28,7 +28,10 @@ const variantSchema = new mongoose.Schema<IVariant>({
     required: true,
     default: 1,
     min: 0,
-    validate: [validator.isInt, 'count must be integer'],
+    validate: [
+      (el: number) => parseInt(`${el}`) - el === 0,
+      'Count must be integer',
+    ],
   },
 });
 
