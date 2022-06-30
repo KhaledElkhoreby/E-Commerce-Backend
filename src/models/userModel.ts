@@ -13,7 +13,7 @@ export interface IUser {
   role: 'admin' | 'user';
   paymentMethods: 'cash' | 'card';
   phone: string[];
-  // passwordChangedAt: mongoose.Date;
+  passwordChangedAt: mongoose.Date;
   // passwordResetToken: String;
   // passwordResetExpires: mongoose.Date;
   active: boolean;
@@ -102,7 +102,7 @@ const userSchema = new mongoose.Schema<IUser>({
       required: true,
     },
   ],
-  // passwordChangedAt: Date,
+  passwordChangedAt: Date,
   // passwordResetToken: String,
   // passwordResetExpires: Date,
   active: {

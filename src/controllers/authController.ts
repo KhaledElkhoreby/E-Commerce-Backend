@@ -1,7 +1,8 @@
-import { Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import mongoose, { Types } from 'mongoose';
-import { IUser } from '../models/userModel';
+import UserModel, { IUser } from '../models/userModel';
+import catchAsync from '../utils/catchAsync';
 
 const SECRET_KEY = process.env.JWT_SECRET!;
 const EXPIRES_IN = process.env.JWT_EXPIRES_IN!;
@@ -38,3 +39,17 @@ const createSendToken = (
     },
   });
 };
+
+export const signup = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { name, email, password, passwordConfirm, role } = <IUser>req.body;
+    const newUser = await UserModel.create({
+      name,
+      email,
+      password,
+      passwordConfirm,
+      role,
+    });
+    return createSendToken(newUser, 201, res);
+  }
+);
