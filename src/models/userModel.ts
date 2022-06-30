@@ -1,5 +1,6 @@
-import mongoose, { Model, Schema, Types } from 'mongoose';
+import mongoose, { Schema, Types } from 'mongoose';
 import validator from 'validator';
+import bycrypt from 'bcryptjs';
 import addressSchema, { IAddress } from '../schemas/addressSchema';
 
 export interface IUser {
@@ -112,11 +113,42 @@ const userSchema = new mongoose.Schema<IUser>({
   },
 });
 
-// Middleware before QUERY
+//? Middleware before QUERY
 userSchema.pre(/^find/, function (next) {
   UserModel.find({ active: { $ne: false } });
   return next();
 });
+
+//? Middleware before SAVE
+userSchema.pre('save', async function (next) {
+  // ! Only run this function if password was not actually modified
+  if (!this.isModified('password')) return next();
+
+  // Hash the password with cost of 12
+  this.password = await bycrypt.hash(this.password, 12);
+
+  // Delete password confirm value from the database
+  (this.passwordConfirm as unknown as undefined) = undefined;
+
+  return next();
+});
+
+//? This middleware for record when password is changed
+userSchema.pre('save', function (next) {
+  // ! Run this fucntin only when password is changed with existing user not new user.
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = (Date.now() - 1000) as unknown as mongoose.Date;
+  return next();
+});
+
+// Method for check password is correct while Sign In
+userSchema.methods.isPasswordCorrect = function (
+  candidatePassword: string,
+  encrybtedUserPassword: string
+) {
+  return bycrypt.compare(candidatePassword, encrybtedUserPassword);
+};
 
 const UserModel = mongoose.model<IUser>('user', userSchema);
 

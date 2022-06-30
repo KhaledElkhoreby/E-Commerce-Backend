@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import mongoose, { Types } from 'mongoose';
 import UserModel, { IUser } from '../models/userModel';
+import AppError from '../utils/AppError';
 import catchAsync from '../utils/catchAsync';
 
 const SECRET_KEY = process.env.JWT_SECRET!;
@@ -51,5 +52,18 @@ export const signup = catchAsync(
       role,
     });
     return createSendToken(newUser, 201, res);
+  }
+);
+
+export const login = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { email, password } = <IUser>req.body;
+
+    // todo 1) check if email and password exist
+    if (!email || !password)
+      next(new AppError('Please provide email and password!', 400));
+
+    // todo 2) check if user exists && password is correct
+    const user = await UserModel.findOne({ email }).select('+password');
   }
 );
