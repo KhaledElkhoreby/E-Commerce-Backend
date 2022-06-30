@@ -2,6 +2,7 @@ import mongoose, { Schema, Types } from 'mongoose';
 import validator from 'validator';
 import bycrypt from 'bcryptjs';
 import addressSchema, { IAddress } from '../schemas/addressSchema';
+import { JwtPayload } from 'jsonwebtoken';
 
 export interface IUser {
   name: string;
@@ -18,6 +19,11 @@ export interface IUser {
   // passwordResetToken: String;
   // passwordResetExpires: mongoose.Date;
   active: boolean;
+  isPasswordCorrect: (
+    candidatePassword: string,
+    encrybtedUserPassword: string
+  ) => Promise<boolean>;
+  isPasswordChangedAfterThisToken: (JWTTimestamp: JwtPayload['iat']) => boolean;
 }
 
 const userSchema = new mongoose.Schema<IUser>({
@@ -142,12 +148,26 @@ userSchema.pre('save', function (next) {
   return next();
 });
 
-// Method for check password is correct while Sign In
+// Method to check password is correct while Sign In
 userSchema.methods.isPasswordCorrect = function (
   candidatePassword: string,
   encrybtedUserPassword: string
 ) {
   return bycrypt.compare(candidatePassword, encrybtedUserPassword);
+};
+
+// Method to check if user changed password after the token was issued
+userSchema.methods.isPasswordChangedAfterThisToken = function (
+  JWTTimestamp: JwtPayload['iat']
+) {
+  if (this.passwordChangedAt) {
+    const changedTimestamp = parseInt(
+      `${this.passwordChangedAt.getTime() / 1000}`,
+      10
+    );
+    return changedTimestamp > JWTTimestamp!;
+  }
+  return false;
 };
 
 const UserModel = mongoose.model<IUser>('user', userSchema);
