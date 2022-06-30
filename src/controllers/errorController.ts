@@ -1,4 +1,4 @@
-import { ErrorRequestHandler, NextFunction, Response,Request } from 'express';
+import { ErrorRequestHandler, NextFunction, Response, Request } from 'express';
 import { CastError, Error } from 'mongoose';
 import AppError from '../utils/AppError';
 
@@ -10,7 +10,7 @@ const handleJWTError = () =>
 
 const handleValidationErrorDB = (err: any) => {
   const errors = Object.values<Error>(err.errors).map((el) => el.message);
-  const message = `Invalid input data. ${errors.join('. ')}`;
+  const message = `Invalid input data: ${errors.join(', ')}`;
   return new AppError(message, 400);
 };
 
@@ -27,8 +27,17 @@ const handleDuplicateFieldsDB = (err: any) => {
   return new AppError(message, 400);
 };
 
-const sendErrorDev = (err: AppError, req: Request, res: Response, next: NextFunction) => {
-  console.log("*************************asd", err);
+const sendErrorDev = (
+  err: any,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  if (err.name === 'CastError') err.statusCode = 400;
+  if (err.code === 11000) err.statusCode = 400;
+  if (err.name === 'ValidationError') err.statusCode = 400;
+  if (err.name === 'JsonWebTokenError') err.statusCode = 401;
+  if (err.name === 'TokenExpiredError') err.statusCode = 401;
   res.status(err.statusCode).json({
     status: err.status,
     message: err.message,
@@ -56,8 +65,15 @@ const sendErrorProd = (err: AppError, res: Response) => {
   }
 };
 
-const globalErrorHandler: ErrorRequestHandler = (err, req:Request, res:Response, next:NextFunction) => {
-  console.log(err.stack);
+const globalErrorHandler: ErrorRequestHandler = (
+  err,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || 'error';
+  console.log({ err });
   if (process.env.NODE_ENV === 'development') {
     sendErrorDev(err, req, res, next);
   } else if (process.env.NODE_ENV === 'production') {
@@ -65,7 +81,7 @@ const globalErrorHandler: ErrorRequestHandler = (err, req:Request, res:Response,
     if (err.code === 11000) err = handleDuplicateFieldsDB(err);
     if (err.name === 'ValidationError') err = handleValidationErrorDB(err);
     if (err.name === 'JsonWebTokenError') err = handleJWTError();
-    if ((err.name = 'TokenExpiredError')) err = handleJWTExpiredError();
+    if (err.name === 'TokenExpiredError') err = handleJWTExpiredError();
 
     sendErrorProd(err, res);
   }

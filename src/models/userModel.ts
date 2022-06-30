@@ -1,6 +1,8 @@
-import mongoose, { Model, Schema, Types } from 'mongoose';
+import mongoose, { Schema, Types } from 'mongoose';
 import validator from 'validator';
+import bycrypt from 'bcryptjs';
 import addressSchema, { IAddress } from '../schemas/addressSchema';
+import { JwtPayload } from 'jsonwebtoken';
 
 export interface IUser {
   name: string;
@@ -13,10 +15,15 @@ export interface IUser {
   role: 'admin' | 'user';
   paymentMethods: 'cash' | 'card';
   phone: string[];
-  // passwordChangedAt: mongoose.Date;
+  passwordChangedAt: mongoose.Date;
   // passwordResetToken: String;
   // passwordResetExpires: mongoose.Date;
   active: boolean;
+  isPasswordCorrect: (
+    candidatePassword: string,
+    encrybtedUserPassword: string
+  ) => Promise<boolean>;
+  isPasswordChangedAfterThisToken: (JWTTimestamp: JwtPayload['iat']) => boolean;
 }
 
 const userSchema = new mongoose.Schema<IUser>({
@@ -102,7 +109,7 @@ const userSchema = new mongoose.Schema<IUser>({
       required: true,
     },
   ],
-  // passwordChangedAt: Date,
+  passwordChangedAt: Date,
   // passwordResetToken: String,
   // passwordResetExpires: Date,
   active: {
@@ -112,11 +119,56 @@ const userSchema = new mongoose.Schema<IUser>({
   },
 });
 
-// Middleware before QUERY
+//? Middleware before QUERY
 userSchema.pre(/^find/, function (next) {
   UserModel.find({ active: { $ne: false } });
   return next();
 });
+
+//? Middleware before SAVE
+userSchema.pre('save', async function (next) {
+  // ! Only run this function if password was not actually modified
+  if (!this.isModified('password')) return next();
+
+  // Hash the password with cost of 12
+  this.password = await bycrypt.hash(this.password, 12);
+
+  // Delete password confirm value from the database
+  (this.passwordConfirm as unknown as undefined) = undefined;
+
+  return next();
+});
+
+//? This middleware for record when password is changed
+userSchema.pre('save', function (next) {
+  // ! Run this fucntin only when password is changed with existing user not new user.
+  if (!this.isModified('password') || this.isNew) return next();
+
+  this.passwordChangedAt = (Date.now() - 1000) as unknown as mongoose.Date;
+  return next();
+});
+
+// Method to check password is correct while Sign In
+userSchema.methods.isPasswordCorrect = function (
+  candidatePassword: string,
+  encrybtedUserPassword: string
+) {
+  return bycrypt.compare(candidatePassword, encrybtedUserPassword);
+};
+
+// Method to check if user changed password after the token was issued
+userSchema.methods.isPasswordChangedAfterThisToken = function (
+  JWTTimestamp: JwtPayload['iat']
+) {
+  if (this.passwordChangedAt) {
+    const changedTimestamp = parseInt(
+      `${this.passwordChangedAt.getTime() / 1000}`,
+      10
+    );
+    return changedTimestamp > JWTTimestamp!;
+  }
+  return false;
+};
 
 const UserModel = mongoose.model<IUser>('user', userSchema);
 

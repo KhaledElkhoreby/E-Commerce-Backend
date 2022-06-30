@@ -1,10 +1,10 @@
 import ReviewModel from '../models/reviewModel';
 import {
-    createModel,
-    deleteModel,
-    getAll,
-    getOne,
-    updateModel,
+  createModel,
+  deleteModel,
+  getAll,
+  getOne,
+  updateModel,
 } from '../utils/handlerFactory';
 
 export const getAllReview = getAll(ReviewModel);

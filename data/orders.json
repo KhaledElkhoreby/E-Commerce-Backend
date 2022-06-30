@@ -1,0 +1,1291 @@
+[
+  {
+    "status": "preparing",
+    "products": [
+      {
+        "brand": "Oswald_Mann",
+        "title": "Hardy92",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XXL",
+            "price": 13,
+            "color": "#80B300",
+            "count": 38
+          }
+        ],
+        "description": "Jillian_Quitzon",
+        "ratingsAverage": 3,
+        "brand_thumbnail": "Donavon11",
+        "ratingsQuantity": 69
+      },
+      {
+        "brand": "Rick87",
+        "title": "Shyanne9",
+        "category": "Shirts",
+        "variants": [
+          {
+            "size": "XXL",
+            "price": 60,
+            "color": "#E666B3",
+            "count": 2
+          },
+          {
+            "size": "M",
+            "price": 77,
+            "color": "#66E64D",
+            "count": 38
+          }
+        ],
+        "description": "Elissa_Stoltenberg45",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Mustafa_Kessler21",
+        "ratingsQuantity": 70
+      },
+      {
+        "brand": "Lola_Legros6",
+        "title": "Terrill9",
+        "category": "Pants",
+        "variants": [
+          {
+            "size": "L",
+            "price": 65,
+            "color": "#CCCC00",
+            "count": 79
+          }
+        ],
+        "description": "Howell.Conn",
+        "ratingsAverage": 2,
+        "brand_thumbnail": "Deborah.Murray27",
+        "ratingsQuantity": 31
+      },
+      {
+        "brand": "Devin.Nikolaus",
+        "title": "Ana_Feil",
+        "category": "Sportswear",
+        "variants": [
+          {
+            "size": "XL",
+            "price": 31,
+            "color": "#4DB380",
+            "count": 59
+          },
+          {
+            "size": "XXL",
+            "price": 73,
+            "color": "#B3B31A",
+            "count": 21
+          },
+          {
+            "size": "L",
+            "price": 54,
+            "color": "#B34D4D",
+            "count": 34
+          }
+        ],
+        "description": "Rupert_McClure",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Zion64",
+        "ratingsQuantity": 43
+      },
+      {
+        "brand": "Kennedi55",
+        "title": "Kenneth2",
+        "category": "Sportswear",
+        "variants": [
+          {
+            "size": "L",
+            "price": 20,
+            "color": "#00B3E6",
+            "count": 41
+          },
+          {
+            "size": "S",
+            "price": 50,
+            "color": "#999966",
+            "count": 65
+          }
+        ],
+        "description": "Mya.Emard",
+        "ratingsAverage": 5,
+        "brand_thumbnail": "Kamille53",
+        "ratingsQuantity": 12
+      }
+    ],
+    "updatedAt": "Sun Jun 26 2022 17:36:54 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Sun Jun 26 2022 07:56:26 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 34
+  },
+  {
+    "status": "shipping",
+    "products": [
+      {
+        "brand": "Lon.Kuphal20",
+        "title": "Cortney_Lind47",
+        "category": "Pants",
+        "variants": [
+          {
+            "size": "S",
+            "price": 4,
+            "color": "#FFFF99",
+            "count": 0
+          },
+          {
+            "size": "M",
+            "price": 74,
+            "color": "#80B300",
+            "count": 67
+          },
+          {
+            "size": "S",
+            "price": 14,
+            "color": "#B33300",
+            "count": 76
+          },
+          {
+            "size": "XL",
+            "price": 52,
+            "color": "#FF33FF",
+            "count": 37
+          },
+          {
+            "size": "L",
+            "price": 2,
+            "color": "#66664D",
+            "count": 55
+          }
+        ],
+        "description": "Pattie.Maggio",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Irma3",
+        "ratingsQuantity": 12
+      },
+      {
+        "brand": "Rodger_VonRueden15",
+        "title": "Kristoffer_Huels67",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XXL",
+            "price": 41,
+            "color": "#E666B3",
+            "count": 71
+          },
+          {
+            "size": "S",
+            "price": 71,
+            "color": "#4DB380",
+            "count": 19
+          },
+          {
+            "size": "XXL",
+            "price": 45,
+            "color": "#4DB3FF",
+            "count": 58
+          },
+          {
+            "size": "XXL",
+            "price": 32,
+            "color": "#66E64D",
+            "count": 41
+          },
+          {
+            "size": "XL",
+            "price": 27,
+            "color": "#E666B3",
+            "count": 11
+          },
+          {
+            "size": "XXL",
+            "price": 75,
+            "color": "#CCFF1A",
+            "count": 27
+          }
+        ],
+        "description": "Bernhard13",
+        "ratingsAverage": 0,
+        "brand_thumbnail": "Francis_Jakubowski",
+        "ratingsQuantity": 22
+      },
+      {
+        "brand": "Blaze.Lueilwitz49",
+        "title": "Whitney.Altenwerth48",
+        "category": "Pants",
+        "variants": [],
+        "description": "Nyah.Kautzer78",
+        "ratingsAverage": 5,
+        "brand_thumbnail": "Milo.Keebler59",
+        "ratingsQuantity": 3
+      }
+    ],
+    "updatedAt": "Sun Jun 26 2022 19:38:19 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Mon Jun 27 2022 03:00:55 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 15
+  },
+  {
+    "status": "preparing",
+    "products": [
+      {
+        "brand": "Aleen_Batz",
+        "title": "Ava_Labadie",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XL",
+            "price": 30,
+            "color": "#991AFF",
+            "count": 3
+          },
+          {
+            "size": "L",
+            "price": 78,
+            "color": "#FF99E6",
+            "count": 57
+          },
+          {
+            "size": "L",
+            "price": 16,
+            "color": "#00B3E6",
+            "count": 49
+          },
+          {
+            "size": "S",
+            "price": 46,
+            "color": "#4D8066",
+            "count": 63
+          }
+        ],
+        "description": "Yasmeen.Stroman78",
+        "ratingsAverage": 5,
+        "brand_thumbnail": "Lorena_Wolf83",
+        "ratingsQuantity": 23
+      },
+      {
+        "brand": "Enrico.Okuneva33",
+        "title": "Jewel.Steuber6",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XXXl",
+            "price": 66,
+            "color": "#B3B31A",
+            "count": 53
+          },
+          {
+            "size": "XL",
+            "price": 15,
+            "color": "#B33300",
+            "count": 8
+          },
+          {
+            "size": "L",
+            "price": 33,
+            "color": "#E666FF",
+            "count": 19
+          }
+        ],
+        "description": "Dejah.Boyer",
+        "ratingsAverage": 5,
+        "brand_thumbnail": "Zetta.Nienow0",
+        "ratingsQuantity": 77
+      },
+      {
+        "brand": "Cedrick_Lindgren",
+        "title": "Delia.Spencer",
+        "category": "Pants",
+        "variants": [
+          {
+            "size": "XL",
+            "price": 61,
+            "color": "#FF4D4D",
+            "count": 32
+          },
+          {
+            "size": "M",
+            "price": 54,
+            "color": "#CCFF1A",
+            "count": 2
+          },
+          {
+            "size": "L",
+            "price": 32,
+            "color": "#FF33FF",
+            "count": 63
+          }
+        ],
+        "description": "Germaine.Daniel0",
+        "ratingsAverage": 2,
+        "brand_thumbnail": "Merl_Lowe",
+        "ratingsQuantity": 30
+      }
+    ],
+    "updatedAt": "Mon Jun 27 2022 05:14:23 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Sun Jun 26 2022 17:29:42 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 25
+  },
+  {
+    "status": "shipping",
+    "products": [
+      {
+        "brand": "Laron.Fay",
+        "title": "Montana.Rippin48",
+        "category": "Shirts",
+        "variants": [],
+        "description": "Josie.Hickle",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Clementine58",
+        "ratingsQuantity": 24
+      },
+      {
+        "brand": "Isaiah.Renner",
+        "title": "Trace_Lockman",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XXXl",
+            "price": 30,
+            "color": "#E666B3",
+            "count": 28
+          },
+          {
+            "size": "XL",
+            "price": 3,
+            "color": "#E64D66",
+            "count": 11
+          },
+          {
+            "size": "M",
+            "price": 24,
+            "color": "#FF99E6",
+            "count": 26
+          },
+          {
+            "size": "L",
+            "price": 44,
+            "color": "#E666B3",
+            "count": 75
+          },
+          {
+            "size": "XL",
+            "price": 49,
+            "color": "#E6B3B3",
+            "count": 34
+          },
+          {
+            "size": "M",
+            "price": 39,
+            "color": "#4D8066",
+            "count": 27
+          },
+          {
+            "size": "XXL",
+            "price": 48,
+            "color": "#33991A",
+            "count": 50
+          },
+          {
+            "size": "M",
+            "price": 38,
+            "color": "#CCCC00",
+            "count": 49
+          }
+        ],
+        "description": "Priscilla46",
+        "ratingsAverage": 1,
+        "brand_thumbnail": "Hershel49",
+        "ratingsQuantity": 21
+      },
+      {
+        "brand": "Arch_Lemke26",
+        "title": "Anya45",
+        "category": "Shirts",
+        "variants": [
+          {
+            "size": "XXL",
+            "price": 3,
+            "color": "#6680B3",
+            "count": 23
+          },
+          {
+            "size": "XL",
+            "price": 44,
+            "color": "#66E64D",
+            "count": 77
+          },
+          {
+            "size": "S",
+            "price": 40,
+            "color": "#E64D66",
+            "count": 19
+          },
+          {
+            "size": "XXL",
+            "price": 56,
+            "color": "#00B3E6",
+            "count": 24
+          }
+        ],
+        "description": "Maxine_Abshire",
+        "ratingsAverage": 3,
+        "brand_thumbnail": "Flossie.Hilpert",
+        "ratingsQuantity": 17
+      },
+      {
+        "brand": "Renee38",
+        "title": "Kennedi.Buckridge3",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XXXl",
+            "price": 20,
+            "color": "#1AFF33",
+            "count": 42
+          },
+          {
+            "size": "M",
+            "price": 48,
+            "color": "#33FFCC",
+            "count": 55
+          },
+          {
+            "size": "XXXl",
+            "price": 15,
+            "color": "#FFB399",
+            "count": 66
+          },
+          {
+            "size": "S",
+            "price": 37,
+            "color": "#999933",
+            "count": 65
+          },
+          {
+            "size": "XXL",
+            "price": 37,
+            "color": "#9900B3",
+            "count": 36
+          },
+          {
+            "size": "XXL",
+            "price": 55,
+            "color": "#FF99E6",
+            "count": 1
+          },
+          {
+            "size": "M",
+            "price": 69,
+            "color": "#E666FF",
+            "count": 31
+          },
+          {
+            "size": "M",
+            "price": 76,
+            "color": "#FF1A66",
+            "count": 45
+          },
+          {
+            "size": "M",
+            "price": 36,
+            "color": "#00E680",
+            "count": 33
+          },
+          {
+            "size": "XL",
+            "price": 40,
+            "color": "#999933",
+            "count": 29
+          },
+          {
+            "size": "L",
+            "price": 38,
+            "color": "#809900",
+            "count": 70
+          },
+          {
+            "size": "L",
+            "price": 44,
+            "color": "#66994D",
+            "count": 78
+          }
+        ],
+        "description": "Trystan_Smith1",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Effie_Howell",
+        "ratingsQuantity": 31
+      },
+      {
+        "brand": "Vivianne.Koepp2",
+        "title": "Else67",
+        "category": "Pants",
+        "variants": [
+          {
+            "size": "XXL",
+            "price": 57,
+            "color": "#E6331A",
+            "count": 67
+          },
+          {
+            "size": "L",
+            "price": 4,
+            "color": "#999966",
+            "count": 24
+          },
+          {
+            "size": "M",
+            "price": 5,
+            "color": "#FF33FF",
+            "count": 34
+          },
+          {
+            "size": "S",
+            "price": 34,
+            "color": "#00E680",
+            "count": 57
+          },
+          {
+            "size": "M",
+            "price": 29,
+            "color": "#1AB399",
+            "count": 52
+          }
+        ],
+        "description": "Izaiah37",
+        "ratingsAverage": 1,
+        "brand_thumbnail": "Dwight.Gorczany39",
+        "ratingsQuantity": 46
+      }
+    ],
+    "updatedAt": "Sun Jun 26 2022 13:08:45 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Sun Jun 26 2022 23:11:11 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 4
+  },
+  {
+    "status": "preparing",
+    "products": [
+      {
+        "brand": "Ara_Feest",
+        "title": "Rupert.Bode19",
+        "category": "Pants",
+        "variants": [
+          {
+            "size": "M",
+            "price": 60,
+            "color": "#80B300",
+            "count": 8
+          }
+        ],
+        "description": "Orland.Zboncak",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "George_Crist64",
+        "ratingsQuantity": 10
+      },
+      {
+        "brand": "Russel57",
+        "title": "Greyson.Raynor",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XXXl",
+            "price": 51,
+            "color": "#FF3380",
+            "count": 48
+          },
+          {
+            "size": "M",
+            "price": 16,
+            "color": "#E6331A",
+            "count": 68
+          },
+          {
+            "size": "S",
+            "price": 16,
+            "color": "#FF1A66",
+            "count": 75
+          },
+          {
+            "size": "XL",
+            "price": 71,
+            "color": "#E6FF80",
+            "count": 79
+          }
+        ],
+        "description": "Nathaniel48",
+        "ratingsAverage": 3,
+        "brand_thumbnail": "Addie_Cremin86",
+        "ratingsQuantity": 31
+      },
+      {
+        "brand": "Lulu_Schimmel",
+        "title": "Lauren77",
+        "category": "Shirts",
+        "variants": [
+          {
+            "size": "M",
+            "price": 13,
+            "color": "#E666FF",
+            "count": 52
+          },
+          {
+            "size": "M",
+            "price": 7,
+            "color": "#CC9999",
+            "count": 24
+          },
+          {
+            "size": "XL",
+            "price": 29,
+            "color": "#66E64D",
+            "count": 53
+          }
+        ],
+        "description": "Ewell61",
+        "ratingsAverage": 0,
+        "brand_thumbnail": "Samara_Sanford",
+        "ratingsQuantity": 70
+      },
+      {
+        "brand": "Kelley_Flatley88",
+        "title": "Ford_Cronin",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "S",
+            "price": 57,
+            "color": "#00E680",
+            "count": 69
+          },
+          {
+            "size": "M",
+            "price": 7,
+            "color": "#80B300",
+            "count": 38
+          },
+          {
+            "size": "XXXl",
+            "price": 25,
+            "color": "#4D8000",
+            "count": 0
+          },
+          {
+            "size": "XL",
+            "price": 52,
+            "color": "#E666FF",
+            "count": 8
+          }
+        ],
+        "description": "Eusebio_Rutherford",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Demarco45",
+        "ratingsQuantity": 1
+      }
+    ],
+    "updatedAt": "Sun Jun 26 2022 20:36:59 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Sun Jun 26 2022 11:19:30 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 36
+  },
+  {
+    "status": "preparing",
+    "products": [
+      {
+        "brand": "Abdullah_Champlin43",
+        "title": "Rebeka_Kiehn96",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "L",
+            "price": 60,
+            "color": "#33FFCC",
+            "count": 18
+          },
+          {
+            "size": "XL",
+            "price": 37,
+            "color": "#CC80CC",
+            "count": 39
+          },
+          {
+            "size": "M",
+            "price": 7,
+            "color": "#CCFF1A",
+            "count": 20
+          },
+          {
+            "size": "L",
+            "price": 53,
+            "color": "#66991A",
+            "count": 19
+          },
+          {
+            "size": "XL",
+            "price": 45,
+            "color": "#E6B3B3",
+            "count": 66
+          }
+        ],
+        "description": "Frederique.Kshlerin",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Kade_Mosciski",
+        "ratingsQuantity": 61
+      },
+      {
+        "brand": "Arnold_Bernier",
+        "title": "Theodore.Pfeffer85",
+        "category": "T-shirts",
+        "variants": [],
+        "description": "Xzavier_Hintz11",
+        "ratingsAverage": 3,
+        "brand_thumbnail": "Roosevelt76",
+        "ratingsQuantity": 2
+      },
+      {
+        "brand": "Lew_Wolf",
+        "title": "Kira_Mitchell",
+        "category": "Shirts",
+        "variants": [
+          {
+            "size": "M",
+            "price": 19,
+            "color": "#E6FF80",
+            "count": 54
+          }
+        ],
+        "description": "Kylie_Larkin16",
+        "ratingsAverage": 1,
+        "brand_thumbnail": "Giuseppe_Ziemann63",
+        "ratingsQuantity": 0
+      },
+      {
+        "brand": "Libbie34",
+        "title": "Amani_Connelly",
+        "category": "Sportswear",
+        "variants": [
+          {
+            "size": "L",
+            "price": 72,
+            "color": "#E666B3",
+            "count": 7
+          },
+          {
+            "size": "XL",
+            "price": 72,
+            "color": "#FF33FF",
+            "count": 78
+          }
+        ],
+        "description": "Hattie.Walter",
+        "ratingsAverage": 1,
+        "brand_thumbnail": "Georgiana.Stokes4",
+        "ratingsQuantity": 79
+      },
+      {
+        "brand": "Bessie58",
+        "title": "Kip_Cole",
+        "category": "Pants",
+        "variants": [],
+        "description": "Eileen57",
+        "ratingsAverage": 3,
+        "brand_thumbnail": "Velda_Lindgren38",
+        "ratingsQuantity": 64
+      }
+    ],
+    "updatedAt": "Sun Jun 26 2022 10:46:38 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Sun Jun 26 2022 14:24:58 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 12
+  },
+  {
+    "status": "completed",
+    "products": [
+      {
+        "brand": "Glenda.Metz80",
+        "title": "Oleta_Corwin76",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XXXl",
+            "price": 47,
+            "color": "#809900",
+            "count": 76
+          },
+          {
+            "size": "XXXl",
+            "price": 64,
+            "color": "#4D8066",
+            "count": 66
+          },
+          {
+            "size": "XXL",
+            "price": 25,
+            "color": "#FFB399",
+            "count": 76
+          },
+          {
+            "size": "XXXl",
+            "price": 33,
+            "color": "#33991A",
+            "count": 36
+          },
+          {
+            "size": "XXL",
+            "price": 22,
+            "color": "#E666B3",
+            "count": 33
+          },
+          {
+            "size": "XXL",
+            "price": 7,
+            "color": "#4D8066",
+            "count": 44
+          },
+          {
+            "size": "L",
+            "price": 33,
+            "color": "#66664D",
+            "count": 74
+          }
+        ],
+        "description": "Lia_Skiles",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Melyna_Wisoky",
+        "ratingsQuantity": 0
+      }
+    ],
+    "updatedAt": "Sun Jun 26 2022 17:54:05 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Mon Jun 27 2022 06:45:22 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 66
+  },
+  {
+    "status": "completed",
+    "products": [
+      {
+        "brand": "Dominique.Murphy87",
+        "title": "Devyn46",
+        "category": "Pants",
+        "variants": [
+          {
+            "size": "M",
+            "price": 40,
+            "color": "#CC9999",
+            "count": 79
+          },
+          {
+            "size": "XXL",
+            "price": 4,
+            "color": "#33991A",
+            "count": 46
+          },
+          {
+            "size": "XXL",
+            "price": 64,
+            "color": "#B3B31A",
+            "count": 55
+          }
+        ],
+        "description": "Rosamond.Schmidt82",
+        "ratingsAverage": 3,
+        "brand_thumbnail": "Colby_Pfeffer1",
+        "ratingsQuantity": 71
+      },
+      {
+        "brand": "Marlin_Kuhlman24",
+        "title": "Kaitlin_Schaefer42",
+        "category": "Shirts",
+        "variants": [
+          {
+            "size": "S",
+            "price": 56,
+            "color": "#B366CC",
+            "count": 71
+          },
+          {
+            "size": "S",
+            "price": 22,
+            "color": "#00B3E6",
+            "count": 10
+          },
+          {
+            "size": "XXXl",
+            "price": 12,
+            "color": "#FF3380",
+            "count": 13
+          },
+          {
+            "size": "S",
+            "price": 21,
+            "color": "#4DB3FF",
+            "count": 72
+          },
+          {
+            "size": "L",
+            "price": 12,
+            "color": "#4D8000",
+            "count": 43
+          },
+          {
+            "size": "M",
+            "price": 75,
+            "color": "#FF4D4D",
+            "count": 35
+          },
+          {
+            "size": "XXL",
+            "price": 52,
+            "color": "#FFB399",
+            "count": 80
+          },
+          {
+            "size": "M",
+            "price": 43,
+            "color": "#99FF99",
+            "count": 74
+          },
+          {
+            "size": "XXL",
+            "price": 71,
+            "color": "#E6B333",
+            "count": 39
+          },
+          {
+            "size": "XL",
+            "price": 28,
+            "color": "#B3B31A",
+            "count": 3
+          }
+        ],
+        "description": "Beau_Ortiz",
+        "ratingsAverage": 0,
+        "brand_thumbnail": "Frida_Gutmann",
+        "ratingsQuantity": 35
+      },
+      {
+        "brand": "Darien_Pagac",
+        "title": "Myron_Rodriguez59",
+        "category": "Shirts",
+        "variants": [
+          {
+            "size": "XXXl",
+            "price": 17,
+            "color": "#66991A",
+            "count": 44
+          },
+          {
+            "size": "XXXl",
+            "price": 50,
+            "color": "#33991A",
+            "count": 3
+          },
+          {
+            "size": "L",
+            "price": 68,
+            "color": "#00B3E6",
+            "count": 59
+          },
+          {
+            "size": "XL",
+            "price": 68,
+            "color": "#FF3380",
+            "count": 71
+          },
+          {
+            "size": "M",
+            "price": 60,
+            "color": "#E6FF80",
+            "count": 80
+          },
+          {
+            "size": "XL",
+            "price": 0,
+            "color": "#FF6633",
+            "count": 74
+          },
+          {
+            "size": "XXL",
+            "price": 76,
+            "color": "#FF33FF",
+            "count": 68
+          },
+          {
+            "size": "S",
+            "price": 43,
+            "color": "#33991A",
+            "count": 47
+          },
+          {
+            "size": "XL",
+            "price": 4,
+            "color": "#999966",
+            "count": 55
+          }
+        ],
+        "description": "Rahsaan.Veum",
+        "ratingsAverage": 1,
+        "brand_thumbnail": "Doris.Hagenes",
+        "ratingsQuantity": 24
+      }
+    ],
+    "updatedAt": "Mon Jun 27 2022 07:25:03 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Mon Jun 27 2022 04:15:24 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 10
+  },
+  {
+    "status": "shipping",
+    "products": [
+      {
+        "brand": "Delilah.Kilback",
+        "title": "Fernando_Nienow99",
+        "category": "Sportswear",
+        "variants": [
+          {
+            "size": "XXL",
+            "price": 12,
+            "color": "#FFB399",
+            "count": 77
+          },
+          {
+            "size": "XXXl",
+            "price": 36,
+            "color": "#99FF99",
+            "count": 77
+          },
+          {
+            "size": "L",
+            "price": 8,
+            "color": "#999966",
+            "count": 74
+          },
+          {
+            "size": "XXL",
+            "price": 10,
+            "color": "#CCFF1A",
+            "count": 68
+          },
+          {
+            "size": "M",
+            "price": 76,
+            "color": "#66E64D",
+            "count": 42
+          },
+          {
+            "size": "S",
+            "price": 77,
+            "color": "#33FFCC",
+            "count": 59
+          }
+        ],
+        "description": "Jeanne_Haley10",
+        "ratingsAverage": 2,
+        "brand_thumbnail": "Jaime_Robel88",
+        "ratingsQuantity": 64
+      },
+      {
+        "brand": "Colton17",
+        "title": "Percy.Waelchi28",
+        "category": "Pants",
+        "variants": [
+          {
+            "size": "S",
+            "price": 31,
+            "color": "#E6331A",
+            "count": 21
+          },
+          {
+            "size": "XXXl",
+            "price": 21,
+            "color": "#E64D66",
+            "count": 46
+          }
+        ],
+        "description": "Jalon.Renner3",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Darrion.Konopelski49",
+        "ratingsQuantity": 56
+      },
+      {
+        "brand": "Richmond_Dooley",
+        "title": "Moises_Morissette49",
+        "category": "Sportswear",
+        "variants": [
+          {
+            "size": "L",
+            "price": 80,
+            "color": "#1AFF33",
+            "count": 3
+          },
+          {
+            "size": "M",
+            "price": 30,
+            "color": "#99FF99",
+            "count": 34
+          },
+          {
+            "size": "XXL",
+            "price": 77,
+            "color": "#FFFF99",
+            "count": 44
+          },
+          {
+            "size": "L",
+            "price": 47,
+            "color": "#6680B3",
+            "count": 2
+          },
+          {
+            "size": "XXL",
+            "price": 41,
+            "color": "#FFFF99",
+            "count": 38
+          },
+          {
+            "size": "XXL",
+            "price": 52,
+            "color": "#33991A",
+            "count": 24
+          }
+        ],
+        "description": "Destany_Gleichner84",
+        "ratingsAverage": 5,
+        "brand_thumbnail": "Laury.Hickle62",
+        "ratingsQuantity": 1
+      }
+    ],
+    "updatedAt": "Sun Jun 26 2022 12:24:32 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Mon Jun 27 2022 03:56:46 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 43
+  },
+  {
+    "status": "completed",
+    "products": [
+      {
+        "brand": "Jamison_Hilpert49",
+        "title": "Eudora.Aufderhar",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "L",
+            "price": 58,
+            "color": "#E6FF80",
+            "count": 75
+          },
+          {
+            "size": "S",
+            "price": 17,
+            "color": "#B366CC",
+            "count": 51
+          },
+          {
+            "size": "XL",
+            "price": 55,
+            "color": "#991AFF",
+            "count": 20
+          },
+          {
+            "size": "L",
+            "price": 29,
+            "color": "#1AFF33",
+            "count": 43
+          },
+          {
+            "size": "L",
+            "price": 63,
+            "color": "#809900",
+            "count": 8
+          },
+          {
+            "size": "L",
+            "price": 49,
+            "color": "#809980",
+            "count": 61
+          },
+          {
+            "size": "XL",
+            "price": 1,
+            "color": "#66664D",
+            "count": 74
+          },
+          {
+            "size": "XXL",
+            "price": 23,
+            "color": "#80B300",
+            "count": 54
+          }
+        ],
+        "description": "Uriel64",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Vilma_Watsica91",
+        "ratingsQuantity": 64
+      },
+      {
+        "brand": "Ida.OConnell",
+        "title": "Lionel.Zulauf70",
+        "category": "Shirts",
+        "variants": [
+          {
+            "size": "XXL",
+            "price": 11,
+            "color": "#FF4D4D",
+            "count": 67
+          },
+          {
+            "size": "L",
+            "price": 55,
+            "color": "#FF1A66",
+            "count": 39
+          },
+          {
+            "size": "M",
+            "price": 39,
+            "color": "#E64D66",
+            "count": 71
+          },
+          {
+            "size": "M",
+            "price": 43,
+            "color": "#99E6E6",
+            "count": 52
+          }
+        ],
+        "description": "Hiram_Steuber",
+        "ratingsAverage": 4,
+        "brand_thumbnail": "Petra.Pacocha",
+        "ratingsQuantity": 17
+      },
+      {
+        "brand": "Nick76",
+        "title": "Karli6",
+        "category": "T-shirts",
+        "variants": [
+          {
+            "size": "XXXl",
+            "price": 69,
+            "color": "#6680B3",
+            "count": 20
+          },
+          {
+            "size": "L",
+            "price": 50,
+            "color": "#99E6E6",
+            "count": 36
+          },
+          {
+            "size": "XXXl",
+            "price": 0,
+            "color": "#E666FF",
+            "count": 39
+          },
+          {
+            "size": "S",
+            "price": 3,
+            "color": "#00B3E6",
+            "count": 56
+          }
+        ],
+        "description": "Jett.Eichmann",
+        "ratingsAverage": 0,
+        "brand_thumbnail": "Dwight.Konopelski82",
+        "ratingsQuantity": 73
+      }
+    ],
+    "updatedAt": "Sun Jun 26 2022 15:36:20 GMT+0200 (Eastern European Standard Time)",
+    "createdAt": "Sun Jun 26 2022 14:26:31 GMT+0200 (Eastern European Standard Time)",
+    "totalPrice": 35
+  }
+]
