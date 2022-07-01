@@ -1,5 +1,10 @@
 import express from 'express';
-import { login, signup } from '../controllers/authController';
+import {
+  forgetPassword,
+  login,
+  resetPassword,
+  signup,
+} from '../controllers/authController';
 import {
   addUser,
   deleteUser,
@@ -11,6 +16,8 @@ const usersRouter = express.Router();
 
 usersRouter.post('/signup', signup);
 usersRouter.post('/login', login);
+usersRouter.post('/forgotPassword', forgetPassword);
+usersRouter.patch('/resetPassword/:token', resetPassword);
 
 // Must be producted and only accessed by admin only
 
