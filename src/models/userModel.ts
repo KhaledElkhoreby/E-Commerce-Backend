@@ -3,6 +3,7 @@ import validator from 'validator';
 import bycrypt from 'bcryptjs';
 import addressSchema, { IAddress } from '../schemas/addressSchema';
 import { JwtPayload } from 'jsonwebtoken';
+import crypto from 'crypto';
 
 export interface IUser {
   name: string;
@@ -16,14 +17,15 @@ export interface IUser {
   paymentMethods: 'cash' | 'card';
   phone: string[];
   passwordChangedAt: mongoose.Date;
-  // passwordResetToken: String;
-  // passwordResetExpires: mongoose.Date;
+  passwordResetToken?: String;
+  passwordResetExpires?: mongoose.Date;
   active: boolean;
   isPasswordCorrect: (
     candidatePassword: string,
     encrybtedUserPassword: string
   ) => Promise<boolean>;
   isPasswordChangedAfterThisToken: (JWTTimestamp: JwtPayload['iat']) => boolean;
+  createPasswordResetToken: () => string;
 }
 
 const userSchema = new mongoose.Schema<IUser>({
@@ -168,6 +170,24 @@ userSchema.methods.isPasswordChangedAfterThisToken = function (
     return changedTimestamp > JWTTimestamp!;
   }
   return false;
+};
+
+// Method to create token for reset password
+userSchema.methods.createPasswordResetToken = function () {
+  // this token will send by email
+  const resetToken = crypto.randomBytes(32).toString('hex');
+
+  // The same algorithm is used in resetPassword in authController.js
+  this.passwordResetToken = crypto // this what will save in database
+    .createHash('sha256')
+    .update(resetToken)
+    .digest('hex');
+
+  console.log({ resetToken, passwordResetToken: this.passwordResetToken });
+
+  this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+
+  return resetToken;
 };
 
 const UserModel = mongoose.model<IUser>('user', userSchema);
