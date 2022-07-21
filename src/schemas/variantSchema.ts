@@ -1,26 +1,21 @@
-import mongoose from 'mongoose';
+import { Schema } from 'mongoose';
 import validator from 'validator';
 
-export interface IVariant {
-  price: number;
-  color: string;
+export interface ISize {
   size: string;
   count: number;
+  price: number;
 }
-const variantSchema = new mongoose.Schema<IVariant>({
-  price: {
-    type: Number,
-    required: true,
-    min: 0,
-  },
-  color: {
-    type: String,
-    required: true,
-    validate: [validator.isHexColor, 'Invalid color'],
-  },
+export interface IVariant {
+  color: string;
+  sizes: ISize[];
+  images: string[];
+}
+
+const sizeSchema = new Schema<ISize>({
   size: {
     type: String,
-    required: true,
+    required: [true, 'Must have size'],
     enum: ['S', 'M', 'L', 'XL', 'XXL', 'XXXl'],
   },
   count: {
@@ -29,9 +24,29 @@ const variantSchema = new mongoose.Schema<IVariant>({
     default: 1,
     min: 0,
     validate: [
-      (el: number) => parseInt(`${el}`) - el === 0,
-      'Count must be integer',
+      (val: number) => validator.isInt(`${val}`),
+      'count must be integer',
     ],
+  },
+  price: {
+    type: Number,
+    required: [true, 'Must have price'],
+    min: 0,
+  },
+});
+
+const variantSchema = new Schema<IVariant>({
+  color: {
+    type: String,
+    required: true,
+    validate: [validator.isHexColor, 'Invalid color'],
+  },
+  sizes: {
+    type: [sizeSchema],
+    required: [true, 'Varient must have list of sizes'],
+  },
+  images: {
+    type: [String],
   },
 });
 
