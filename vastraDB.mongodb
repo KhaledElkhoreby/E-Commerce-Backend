@@ -1,0 +1,186 @@
+use('test');
+db.products.insertOne({
+    "brand": "Andres.Fadel59",
+    "title": "Destiny97",
+    "category": "Shirts",
+    "variants": [
+      {
+        "color": "#CC80CC",
+        "sizes": [
+          {
+            "size": "S",
+            "count": 4,
+            "price": 29
+          },
+          {
+            "size": "XXL",
+            "count": 22,
+            "price": 8
+          },
+          {
+            "size": "M",
+            "count": 23,
+            "price": 8
+          }
+        ],
+        "images": [
+          "Tyrique.Blick",
+          "Petra_Paucek",
+          "Theodore_Davis26",
+          "Juana32",
+          "Liana_Wolf38",
+          "Jackie_Reichel"
+        ]
+      },
+      {
+        "color": "#FF3380",
+        "sizes": [
+          {
+            "size": "XL",
+            "count": 45,
+            "price": 32
+          },
+          {
+            "size": "M",
+            "count": 38,
+            "price": 17
+          }
+        ],
+        "images": [
+          "Jennifer.Kilback",
+          "Krystal_Rath",
+          "Lela.Littel63"
+        ]
+      },
+      {
+        "color": "#991AFF",
+        "sizes": [
+          {
+            "size": "L",
+            "count": 78,
+            "price": 18
+          },
+          {
+            "size": "M",
+            "count": 40,
+            "price": 3
+          },
+       
+          {
+            "size": "XL",
+            "count": 77,
+            "price": 50
+          }
+        ],
+        "images": [
+          "Chesley89",
+          "Alize33",
+          "Sammy47"
+        ]
+      },
+      {
+        "color": "#00E680",
+        "sizes": [
+          {
+            "size": "L",
+            "count": 80,
+            "price": 60
+          },
+          
+          {
+            "size": "XL",
+            "count": 32,
+            "price": 18
+          }
+        ],
+        "images": []
+      },
+      {
+        "color": "#999933",
+        "sizes": [{
+            "size": "M",
+            "count": 30,
+            "price": 28
+          },
+          {
+            "size": "XL",
+            "count": 80,
+            "price": 64
+          },
+          {
+            "size": "XXXl",
+            "count": 15,
+            "price": 20
+          }],
+        "images": [
+          "Larry68",
+          "Imogene.Cummings",
+          "Dawn2",
+          "Tyreek_Gerlach",
+          "Leslie_Koss45",
+          "Olga_Marvin24",
+          "Yasmeen_Mitchell2",
+          "Aurelie_Herman82"
+        ]
+      },
+      {
+        "color": "#809900",
+        "sizes": [
+          {
+            "size": "XXL",
+            "count": 18,
+            "price": 18
+          }
+        ],
+        "images": [
+          "Ozella.Gottlieb5",
+          "Orie49",
+          "Mellie.Borer21",
+          "Miguel_Mosciski19",
+          "Margie_Osinski",
+          "Hosea_Deckow33"
+        ]
+      },
+      {
+        "color": "#FF6633",
+        "sizes": [
+          
+          {
+            "size": "M",
+            "count": 30,
+            "price": 28
+          },
+          {
+            "size": "XL",
+            "count": 80,
+            "price": 64
+          },
+          {
+            "size": "XXXl",
+            "count": 15,
+            "price": 20
+          }
+        ],
+        "images": [
+          "Gabriella.Hilpert76",
+          "Verlie40",
+          "Hermann.Brekke",
+          "Abbey_Rice",
+          "Hettie_Hilll"
+        ]
+      },
+      {
+        "color": "#809980",
+        "sizes": [],
+        "images": [
+          "Harmony.Morissette"
+        ]
+      }
+    ],
+    "description": "Hilton_Reynolds37",
+    "ratingsAverage": 3,
+    "brand_thumbnail": "Eduardo64",
+    "ratingsQuantity": 42
+  })
+
+// db.products.find({})
