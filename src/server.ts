@@ -22,7 +22,7 @@ let server: Server;
 
   console.log('Succesful DB Connection');
   const port = process.env.PORT || 3000;
-  const host = process.env.HOST;
+  const host = process.env.HOST || 'http//localhost';
   server = app.listen(port, () => {
     console.log(`App running on port ${host}:${port} ...`);
   });
