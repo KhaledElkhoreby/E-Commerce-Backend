@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc -w",
     "start": "nodemon dist/server.js",
-    "start:prod": "cross-env NODE_ENV=production nodemon dist/server.js",
+    "start:prod": "tsc && cross-env NODE_ENV=production nodemon dist/server.js",
     "prettier": "npx prettier --write ."
   },
   "author": "",
@@ -26,7 +26,8 @@
     "nodemailer": "^6.7.6",
     "nodemon": "^2.0.18",
     "slugify": "^1.6.5",
-    "validator": "^13.7.0"
+    "validator": "^13.7.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
