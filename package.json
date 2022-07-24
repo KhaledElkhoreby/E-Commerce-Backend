@@ -6,7 +6,7 @@
   "scripts": {
     "tsc": "tsc -w",
     "start": "nodemon dist/server.js",
-    "start:prod": "tsc && cross-env NODE_ENV=production nodemon dist/server.js",
+    "build": "tsc && cross-env NODE_ENV=production nodemon dist/server.js",
     "prettier": "npx prettier --write ."
   },
   "author": "",
