@@ -2,13 +2,13 @@
   "name": "vastra-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
-    "start": "vercel dev",
-    "deploy": "vercel deploy --prod",
-    "tsc": "tsc -w",
-    "dev": "nodemon dist/server.js",
-    "prod": "tsc && cross-env NODE_ENV=production node dist/server.js",
+    "start": "node build/server.js",
+    "postinstall": "tsc",
+    "watch": "tsc -w",
+    "dev": "nodemon build/server.js",
+    "prod": "tsc && cross-env NODE_ENV=production node build/server.js",
     "prettier": "npx prettier --write ."
   },
   "author": "Khaled El-Khoreby",
@@ -28,8 +28,7 @@
     "mongoose": "^6.4.0",
     "nodemailer": "^6.7.6",
     "slugify": "^1.6.5",
-    "validator": "^13.7.0",
-    "vercel": "^27.2.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
