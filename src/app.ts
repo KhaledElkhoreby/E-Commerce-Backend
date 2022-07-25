@@ -3,7 +3,7 @@ import express from 'express';
 import mongoSanitize from 'express-mongo-sanitize';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
-import morgan from 'morgan';
+// import morgan from 'morgan';
 import globalErrorHandler from './controllers/errorController';
 import indexRouter from './routes';
 import AppError from './utils/AppError';
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 // Development logging
 if (process.env.NODE_ENV === 'development') {
   console.log('Start Development');
-  app.use(morgan('dev'));
+  // app.use(morgan('dev'));
 } else {
   console.log('Strat Production');
 }
