@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import globalErrorHandler from './controllers/errorController';
 import indexRouter from './routes';
 import AppError from './utils/AppError';
+import compression from 'compression';
 
 const app = express();
 
@@ -49,6 +50,8 @@ app.use(mongoSanitize());
 app.use(cors());
 
 app.use(express.static(`public`));
+
+app.use(compression());
 
 // todo 2) ROUTES
 app.use('/api/v1', indexRouter);
