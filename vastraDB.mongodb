@@ -1,5 +1,5 @@
 use('test');
-db.products.insertOne({
+/* db.products.insertOne({
     "brand": "Andres.Fadel59",
     "title": "Destiny97",
     "category": "Shirts",
@@ -183,4 +183,5 @@ db.products.insertOne({
     "ratingsQuantity": 42
   })
 
-// db.products.find({})
+// db.products.find({}) */
+
