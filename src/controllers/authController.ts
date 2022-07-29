@@ -83,14 +83,14 @@ export const login = catchAsync(
     if (!user || !isCorrect)
       return next(new AppError('Incorrect email or password', 401));
 
-    // todo 3) If everything ok, send token to client
+    // todo 3) If everything ok, send a token to the client
     return createSendToken(user, 200, res);
   }
 );
 
 export const protect = catchAsync(
   async (req: CustomRequest, res: Response, next: NextFunction) => {
-    // todo 1) Getting the token and check if it exit
+    // todo 1) Getting the token and checking if it exit
     let token;
     if (req.headers?.authorization?.startsWith('Bearer')) {
       token = req.headers.authorization.split(' ')[1];
@@ -106,7 +106,7 @@ export const protect = catchAsync(
     const decoded = jwt.verify(token, SECRET_KEY) as jwt.JwtPayload;
     console.log({ decoded });
 
-    // todo 3) Check if user still exists
+    // todo 3) Check if the user still exists
     const currentUser = await UserModel.findById(decoded.id);
     if (!currentUser)
       return next(
@@ -116,13 +116,13 @@ export const protect = catchAsync(
         )
       );
 
-    // todo 4) Check if user changed password after the token was issued
+    // todo 4) Check if the user changed the password after the token was issued
     if (currentUser.isPasswordChangedAfterThisToken(decoded.iat))
       return next(
-        new AppError('The user changed password after this token', 401)
+        new AppError('The user changed the password after this token', 401)
       );
 
-    // ? GRANT ACCESS TO PRODUCTED ROUTE
+    // ? GRANT ACCESS TO PROTECTED ROUTE
     req.user = { id: currentUser.id, role: currentUser.role };
     return next();
   }
@@ -153,14 +153,14 @@ export const forgetPassword = catchAsync(
     const resetToken = user.createPasswordResetToken();
     await user.save({ validateBeforeSave: false });
 
-    // todo 3) Send it to user's email
+    // todo 3) Send it to the user's email
     const resetURL = `${req.protocol}://${req.get(
       'host'
     )}/api/v1/users/resetPassword/${resetToken}`;
 
     const message = `Forget your password? Submit a PATCH request with your new password and password confirm to:
     ${resetURL}
-    If you didn't forget your password, Pleae ignore this email`;
+    If you didn't forget your password, Please ignore this email`;
     try {
       await sendEmail({
         email: user.email,
@@ -187,14 +187,14 @@ export const forgetPassword = catchAsync(
 
 export const resetPassword = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    // todo 1) Get user based on the token
+    // todo 1) Get the user based on the token
     // The same algorithm is used in createPasswordResetToken in userModel.js
-    const hashedToken = crypto // Create the same token which is suposed saved in database
+    const hashedToken = crypto // Create the same token which is supposed saved in a database
       .createHash('sha256')
       .update(req.params.token)
       .digest('hex');
 
-    // Search for user which has this token that didn't expire yet
+    // Search for the user who has this token that didn't expire yet
     const user = await UserModel.findOne({
       passwordResetToken: hashedToken,
       passwordRestExpires: { $gt: Date.now() },
@@ -202,7 +202,7 @@ export const resetPassword = catchAsync(
 
     if (!user) return next(new AppError('Token has expired or invalid', 400));
 
-    // todo 2) If token has not expired, and there is user, set the new password
+    // todo 2) If the token has not expired, and there is a user, set the new password
     user.password = req.body.password;
     user.passwordConfirm = req.body.passwordConfirm;
     user.passwordResetToken = undefined;

@@ -46,9 +46,6 @@ app.use(express.urlencoded({ extended: true }));
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
 
-// Allow cross origins
-app.use(cors());
-
 // For allowing accessing to static files
 app.use(express.static(`public`));
 
