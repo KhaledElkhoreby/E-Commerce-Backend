@@ -7,7 +7,13 @@ import {
   getProduct,
   updateProduct,
 } from '../controllers/productController';
+import reviewsRouter from './reviewRoute';
 const productsRouter = express.Router();
+
+// POST /tours/1321/reviews
+// GET /tours/1321/reviews
+
+productsRouter.use('/:productId/reviews', reviewsRouter);
 
 productsRouter
   .route('/')

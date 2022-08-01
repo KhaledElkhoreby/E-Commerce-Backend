@@ -185,3 +185,67 @@ use('test');
 
 // db.products.find({}) */
 
+
+db.reviews.insertMany([
+  {
+    "user": "62d991f77181643d5c80025e",
+    "review": "Kayley_Balistreri94",
+    "rating": 3,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c800260",
+    "review": "Katlynn_Fahey50",
+    "rating": 0,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c800262",
+    "review": "Lesley.Kling",
+    "rating": 0,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c800264",
+    "review": "Alberto76",
+    "rating": 1,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c800266",
+    "review": "Catharine46",
+    "rating": 5,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c800268",
+    "review": "Hayley.Watsica",
+    "rating": 5,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c80026a",
+    "review": "Margarett_Becker",
+    "rating": 1,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c80026c",
+    "review": "Lora21",
+    "rating": 4,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c80026e",
+    "review": "Toni.Bins81",
+    "rating": 1,
+    "product": "62dae5bb25b426f73712296a"
+  },
+  {
+    "user": "62d991f77181643d5c800270",
+    "review": "Logan47",
+    "rating": 1,
+    "product": "62dae5bb25b426f73712296a"
+  }
+])
+

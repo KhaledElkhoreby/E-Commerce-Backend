@@ -5,14 +5,20 @@ import {
   deleteReview,
   getAllReview,
   getReview,
+  setBody,
   updateReview,
 } from '../controllers/reviewController';
 
-const reviewsRouter = express.Router();
+const reviewsRouter = express.Router({ mergeParams: true });
+
+// POST /product/1321/reviews
+// GET /product/1321/reviews
+
+reviewsRouter.get('/', getAllReview);
 
 reviewsRouter.use(protect);
 
-reviewsRouter.route('/').get(getAllReview).post(restrictTo('user'), addReview);
+reviewsRouter.post('/', restrictTo('user'), setBody, addReview);
 
 reviewsRouter
   .route('/:id')
