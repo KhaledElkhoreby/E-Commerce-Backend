@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
 import ReviewModel from '../models/reviewModel';
-import catchAsync from '../utils/catchAsync';
 import {
   createModel,
   deleteModel,
