@@ -186,7 +186,7 @@ use('test');
 // db.products.find({}) */
 
 
-db.reviews.insertMany([
+/* db.reviews.insertMany([
   {
     "user": "62d991f77181643d5c80025e",
     "review": "Kayley_Balistreri94",
@@ -248,4 +248,4 @@ db.reviews.insertMany([
     "product": "62dae5bb25b426f73712296a"
   }
 ])
-
+ */
