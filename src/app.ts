@@ -1,4 +1,5 @@
 import compression from 'compression';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import mongoSanitize from 'express-mongo-sanitize';
@@ -11,8 +12,11 @@ import AppError from './utils/AppError';
 
 const app = express();
 
+app.enable('trust proxy');
+
 // todo 1) GLOBAL MIDDLEWARES
 app.use(cors()); // Access-Control-Allow-Origin
+app.options('*', (_req, _res, next) => next(), cors());
 
 app.use(helmet()); // Set security HTTP headers
 app.use(helmet.xssFilter()); // XSS-Protection
@@ -42,6 +46,9 @@ app.use(express.json({ limit: '10kb' }));
 
 // Parse URL-encoded bodies
 app.use(express.urlencoded({ extended: true }));
+
+// Parse Cookie
+app.use(cookieParser());
 
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());

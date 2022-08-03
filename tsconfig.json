@@ -5,7 +5,7 @@
     "rootDir": "./src",
     "outDir": "./build",
     "moduleResolution": "node",
-    "sourceMap": true,
+    // "sourceMap": true,
     "removeComments": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
