@@ -21,6 +21,7 @@ export interface IUser {
   passwordResetExpires?: mongoose.Date;
   active: boolean;
   photo: string;
+  refreshTokens: string[];
 }
 
 interface IUserMethods {
@@ -130,6 +131,7 @@ const userSchema = new mongoose.Schema<IUser, UserModel, IUserMethods>({
     type: String,
     default: 'default.jpg',
   },
+  refreshTokens: [String],
 });
 
 //? Middleware before QUERY
