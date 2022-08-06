@@ -27,7 +27,7 @@ const JWT_COOKIE_EXPIRES_IN = process.env.JWT_REFRESH_TOKEN_COOKIE_EXPIRES_IN!;
 const cookieOptions = {
   expires: new Date(Date.now() + +JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000),
   httpOnly: true,
-  secure: false,
+  secure: process.env.NODE_ENV === 'production',
   same: 'None',
 };
 
@@ -62,7 +62,7 @@ const sendToken = async (
   // Saving refreshTokens with current user
   user.refreshToken = [...newRefreshTokenArray, newRefreshToken];
 
-  const loginUser = await user.save();
+  await user.save();
 
   res.cookie('jwt', newRefreshToken, cookieOptions);
 
